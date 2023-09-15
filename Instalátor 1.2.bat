@@ -7,7 +7,7 @@ if %errorlevel% neq 0 (echo Program je lepsi spustit s opravnenim spravce, pro l
 C:
 cd "C:\Users\%username%\downloads"
 
-set /p aplikace=Zadejte nazev aplikace, kterou chcete nainstalovat: 
+set /p aplikace=Zadaj Apliakciu: 
 :start
 
 rem 7z
@@ -244,14 +244,14 @@ if "%aplikace%"=="winrar" set aplikace=WinRar
 if "%aplikace%"=="Winrar" set aplikace=WinRar
 if "%aplikace%"=="WinRar" call :Instalace "https://www.win-rar.com/fileadmin/winrar-versions/winrar/winrar-x64-611.exe" "winrar-x64-611.exe" "1"
 
-echo Zadana aplikace neni na seznamu, budete ji muset nainstalovat rucne
+echo Zadana Aplikacie Neje Na Zoznamu
 pause > nul
 cls
 set /p aplikace=Zadejte nazev dalsi aplikace, kterou chcete nainstalovat: 
 goto start
 
 :Instalace
-echo Instaluji %aplikace%.....
+echo Instalujem %aplikace%.....
 start %~1
 if exist "%~2" del "%~2"
 :repeat
@@ -259,5 +259,5 @@ timeout /t 0 > nul
 if not exist "%~2" goto repeat
 if %~3 == 1 (start "%~2" "%~2") else (forfiles /m %~2 /c "cmd /c start @file @file")
 cls
-set /p aplikace=Zadejte nazev dalsi aplikace, kterou chcete nainstalovat: 
+set /p aplikace=Zadaj Dalsi Nazov Aplikacie: 
 goto start
