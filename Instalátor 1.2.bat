@@ -247,7 +247,7 @@ if "%aplikace%"=="WinRar" call :Instalace "https://www.win-rar.com/fileadmin/win
 echo Zadana Aplikacie Neje Na Zoznamu
 pause > nul
 cls
-set /p aplikace=Zadejte nazev dalsi aplikace, kterou chcete nainstalovat: 
+set /p aplikace=Zadaj Dalsiu Aplikaciu: 
 goto start
 
 :Instalace
